@@ -10,7 +10,11 @@ describe Calculator do
     end
 
     it 'calculates price for basket with one item' do
-      expect(calculator.get_price([1])).to eq 8 
+      expect(calculator.get_price([1])).to eq 8
+      expect(calculator.get_price([2])).to eq 8
+      expect(calculator.get_price([3])).to eq 8
+      expect(calculator.get_price([4])).to eq 8
+      expect(calculator.get_price([5])).to eq 8 
     end
   end
 
