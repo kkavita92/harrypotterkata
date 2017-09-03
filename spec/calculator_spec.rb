@@ -25,4 +25,10 @@ describe Calculator do
     end
   end
 
+  describe 'discounted basket' do
+    it 'calculates price for full series' do
+      expect(calculator.get_price([1, 2, 3, 4, 5])).to eq 30
+    end
+  end
+
 end
