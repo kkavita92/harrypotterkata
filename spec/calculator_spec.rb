@@ -19,7 +19,7 @@ describe Calculator do
 
     it 'calculates price for baskets with multiple copies of same book' do
       expect(calculator.get_price([1, 1])).to eq 16
-      expect(calculator.get_price([2, 2])).to eq 16
+      expect(calculator.get_price([2, 2, 2])).to eq 24
       expect(calculator.get_price([4, 4, 4, 4])).to eq 32
       expect(calculator.get_price([3, 3, 3, 3, 3])).to eq 40
     end
