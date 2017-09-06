@@ -36,6 +36,10 @@ describe Calculator do
       expect(calculator.get_price([1, 2, 3])).to eq 0.90 * 24
     end
 
+    it 'calculates price for four different books' do
+      expect(calculator.get_price([1, 2, 3, 4])).to eq 0.80 * 32
+    end
+
     it 'calculates price for full series' do
       expect(calculator.get_price([1, 2, 3, 4, 5])).to eq 30
     end
