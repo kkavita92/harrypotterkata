@@ -26,6 +26,10 @@ describe Calculator do
   end
 
   describe 'discounted basket' do
+    it 'calculates price for two different books' do
+      expect(calculator.get_price([1,2])).to eq 0.95 * 16
+    end 
+
     it 'calculates price for full series' do
       expect(calculator.get_price([1, 2, 3, 4, 5])).to eq 30
     end
