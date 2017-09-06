@@ -9,6 +9,7 @@ class Calculator
 
   def discount_price(basket)
     return 0.95 * (basket.length * 8) if basket.length == 2
+    return 0.90 * (basket.length * 8) if basket.length == 3
     return 0.75 * (basket.length * 8) if basket.length == 5
   end
 
