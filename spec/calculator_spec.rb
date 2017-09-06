@@ -52,6 +52,10 @@ describe Calculator do
     it 'calculates price for three different titles and one repeated title' do
       expect(calculator.get_price([1, 2, 3, 1])).to eq 0.90 * 24 + 8
     end
+
+    it 'calculates price for four different titles and one repeated title' do
+      expect(calculator.get_price([1, 2, 3, 4, 1])).to eq 0.80 * 32 + 8
+    end
   end
 
 end
