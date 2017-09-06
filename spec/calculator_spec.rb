@@ -46,7 +46,11 @@ describe Calculator do
 
   describe 'complex discounted basket' do
     it 'calculates price for two different titles and one repeated title' do
-      expect(calculator.get_price([1, 2, 1])).to eq 0.95 * 16 + 8 
+      expect(calculator.get_price([1, 2, 1])).to eq 0.95 * 16 + 8
+    end
+
+    it 'calculates price for three different titles and one repeated title' do
+      expect(calculator.get_price([1, 2, 3, 1])).to eq 0.90 * 24 + 8
     end
   end
 
