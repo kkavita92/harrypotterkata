@@ -19,6 +19,8 @@ For example, how much does this basket of books cost?
 1 copy of the fourth book
 1 copy of the fifth book
 
-## My Approach 
+## My Approach
+
+* Calculator class
 
 ## Reflection
