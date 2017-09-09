@@ -4,7 +4,7 @@ require_relative 'discount_calculator'
 class Calculator
 
   BOOK_PRICE = 8
-  
+
   def initialize(discount_finder = MaximumDiscountFinder, discount_calculator = DiscountCalculator)
     @discount_finder = discount_finder.new
     @discount_calculator = discount_calculator.new
