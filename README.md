@@ -21,6 +21,10 @@ For example, how much does this basket of books cost?
 
 ## My Approach
 
-* Calculator class
 
 ## Reflection
+
+## Pending
+* Refactor Calculator class by extracting further classes
+* Implement edge case - (5,3) book set vs (4,4) book set
+* Complete README
