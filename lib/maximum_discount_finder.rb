@@ -20,7 +20,7 @@ class MaximumDiscountFinder
   private
 
   def check_for_edge_case(discountable_sets)
-    replace(discountable_sets) if discountable_sets.include?(3) && discountable_sets.include?(5)
+    replace(discountable_sets) if (discountable_sets.include?(3) && discountable_sets.include?(5))
   end
 
   def number(discountable_sets)
@@ -29,8 +29,15 @@ class MaximumDiscountFinder
 
   def replace(discountable_sets)
     discountable_sets.fill(4, discountable_sets.size, number(discountable_sets))
-    discountable_sets.delete 5
-    discountable_sets.delete 3
+
+    count = number(discountable_sets)/2
+    while count > 0
+      discountable_sets.delete_at(discountable_sets.index(5))
+      discountable_sets.delete_at(discountable_sets.index(3))
+      count -= 1
+    end
+
+    discountable_sets
   end
 
   def sort_basket_by_title(basket)
