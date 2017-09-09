@@ -8,6 +8,8 @@ class DiscountCalculator
     end.reduce(:+)
   end
 
+  private
+
   def calculate_discount(no_of_books_in_set)
     return BOOK_PRICE if no_of_books_in_set == 1
     return 0.95 * 16 if no_of_books_in_set == 2
