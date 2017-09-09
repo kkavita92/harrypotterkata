@@ -10,26 +10,30 @@ class Calculator
 
   private
 
-  def sort_basket(basket)
-    arr = BOOKS_INDEX.map do |x|
-      basket.count(x)
-    end
+  def divide_basket_into_discountable_sets(basket)
+    sorted_basket = sort_basket_by_title(basket)
 
-    set = []
-    while arr.max > 0
-      set << 5 - arr.count(0)
-      arr = arr.map do |count|
-        count > 0 ? count -= 1 : count
+    no_of_discountable_sets = []
+    while sorted_basket.max > 0
+      no_of_discountable_sets << BOOKS_INDEX.count - sorted_basket.count(0)
+      sorted_basket.map! do |book_count|
+        book_count > 0 ? book_count -= 1 : book_count
       end
     end
 
-     set
+     no_of_discountable_sets
+  end
+
+  def sort_basket_by_title(basket)
+    BOOKS_INDEX.map do |book_index|
+      basket.count(book_index)
+    end
   end
 
   def discount_price(basket)
-    sorted = sort_basket(basket)
+    sorted = divide_basket_into_discountable_sets(basket)
     sorted.map do |x|
-      x == 1 ? x * 8 : count(x)
+      x == 1 ? x * BOOK_PRICE : count(x)
     end.reduce(:+)
   end
 
@@ -38,10 +42,6 @@ class Calculator
     return 0.90 * 24 if x == 3
     return 0.80 * 32 if x == 4
     return 0.75 * 40 if x == 5
-  end
-
-  def set(basket)
-    basket.uniq
   end
 
   def full_price(basket)
