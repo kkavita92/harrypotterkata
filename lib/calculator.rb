@@ -15,7 +15,7 @@ class Calculator
 
     no_of_discountable_sets = []
     while sorted_basket.max > 0
-      no_of_discountable_sets << BOOKS_INDEX.count - sorted_basket.count(0)
+      no_of_discountable_sets << 5 - sorted_basket.count(0)
       sorted_basket.map! do |book_count|
         book_count > 0 ? book_count -= 1 : book_count
       end
@@ -31,17 +31,17 @@ class Calculator
   end
 
   def discount_price(basket)
-    sorted = divide_basket_into_discountable_sets(basket)
-    sorted.map do |x|
-      x == 1 ? x * BOOK_PRICE : count(x)
+    indexed_basket = divide_basket_into_discountable_sets(basket)
+    indexed_basket.map do |no_of_books_in_set|
+      no_of_books_in_set == 1 ? no_of_books_in_set * BOOK_PRICE : calculate_discount(no_of_books_in_set)
     end.reduce(:+)
   end
 
-  def count(x)
-    return 0.95 * 16 if x == 2
-    return 0.90 * 24 if x == 3
-    return 0.80 * 32 if x == 4
-    return 0.75 * 40 if x == 5
+  def calculate_discount(no_of_books_in_set)
+    return 0.95 * 16 if no_of_books_in_set == 2
+    return 0.90 * 24 if no_of_books_in_set == 3
+    return 0.80 * 32 if no_of_books_in_set == 4
+    return 0.75 * 40 if no_of_books_in_set == 5
   end
 
   def full_price(basket)
