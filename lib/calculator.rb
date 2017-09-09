@@ -1,7 +1,14 @@
+require_relative 'maximum_discount_finder'
+
 class Calculator
 
   BOOK_PRICE = 8
-  BOOKS_INDEX = [1, 2, 3, 4, 5]
+
+  attr_reader :discount_finder
+
+  def initialize(discount_finder = MaximumDiscountFinder)
+    @discount_finder = discount_finder.new
+  end
 
   def get_price(basket)
     return discount_price(basket) unless all_basket_same?(basket)
@@ -11,23 +18,7 @@ class Calculator
   private
 
   def divide_basket_into_discountable_sets(basket)
-    sorted_basket = sort_basket_by_title(basket)
-
-    no_of_discountable_sets = []
-    while sorted_basket.max > 0
-      no_of_discountable_sets << 5 - sorted_basket.count(0)
-      sorted_basket.map! do |book_count|
-        book_count > 0 ? book_count -= 1 : book_count
-      end
-    end
-
-     no_of_discountable_sets
-  end
-
-  def sort_basket_by_title(basket)
-    BOOKS_INDEX.map do |book_index|
-      basket.count(book_index)
-    end
+    @discount_finder.no_of_discountable_sets(basket)
   end
 
   def discount_price(basket)

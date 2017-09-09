@@ -26,5 +26,6 @@ For example, how much does this basket of books cost?
 
 ## Pending
 * Refactor Calculator class by extracting further classes
+* Increase test coverage by adding more possibilities for baskets
 * Implement edge case - (5,3) book set vs (4,4) book set
 * Complete README
