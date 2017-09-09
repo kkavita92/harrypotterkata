@@ -69,6 +69,7 @@ describe Calculator do
     it 'optimises discount' do
       expect(calculator.get_price([1, 2, 3, 4, 5, 1, 2, 3])).to eq 51.2
       expect(calculator.get_price([1, 2, 3, 4, 5, 1, 2, 3, 1])).to eq 59.2
+      expect(calculator.get_price([1, 2, 3, 4, 5, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 3])).to eq 102.4
     end
 
   end

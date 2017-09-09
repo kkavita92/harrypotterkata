@@ -5,25 +5,32 @@ class MaximumDiscountFinder
   def no_of_discountable_sets(basket)
     sorted_basket = sort_basket_by_title(basket)
 
-    no_of_discountable_sets = []
+    discountable_sets = []
     while sorted_basket.max > 0
-      no_of_discountable_sets << 5 - sorted_basket.count(0)
+      discountable_sets << 5 - sorted_basket.count(0)
       sorted_basket.map! do |book_count|
         book_count > 0 ? book_count -= 1 : book_count
       end
     end
 
-     check_for_edge_case(no_of_discountable_sets)
-     no_of_discountable_sets
+     check_for_edge_case(discountable_sets)
+     discountable_sets
   end
 
-  def check_for_edge_case(no_of_discountable_sets)
-    replace(no_of_discountable_sets) if no_of_discountable_sets.include?(3) && no_of_discountable_sets.include?(5) 
+  private
+
+  def check_for_edge_case(discountable_sets)
+    replace(discountable_sets) if discountable_sets.include?(3) && discountable_sets.include?(5)
   end
 
-  def replace(no_of_discountable_sets)
-    no_of_discountable_sets.push 4 if no_of_discountable_sets.delete 5
-    no_of_discountable_sets.push 4 if no_of_discountable_sets.delete 3
+  def number(discountable_sets)
+    [discountable_sets.count(3), discountable_sets.count(5)].min * 2
+  end
+
+  def replace(discountable_sets)
+    discountable_sets.fill(4, discountable_sets.size, number(discountable_sets))
+    discountable_sets.delete 5
+    discountable_sets.delete 3
   end
 
   def sort_basket_by_title(basket)
