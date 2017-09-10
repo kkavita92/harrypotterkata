@@ -1,4 +1,4 @@
-class DiscountableSets
+class DiscountableSetList
 
   attr_reader :sets
 
