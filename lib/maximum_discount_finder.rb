@@ -10,7 +10,7 @@ class MaximumDiscountFinder
 
   def no_of_discountable_sets(basket)
     sorted_basket = sort_basket_by_title(basket)
-    @discountable_set_list.empty
+    @discountable_set_list.reset_list
 
     while sorted_basket.max > 0
       @discountable_set_list.sets << 5 - sorted_basket.count(0)
