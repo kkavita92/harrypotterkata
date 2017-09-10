@@ -1,24 +1,24 @@
 class DiscountableSetList
 
-  attr_reader :sets
+  attr_reader :setlist
 
   def initialize
-    @sets = []
+    @setlist = []
   end
 
   def check_for_edge_case
-    optimise_discount if (@sets.include?(3) && @sets.include?(5))
-    return @sets
+    optimise_discount if (@setlist.include?(3) && @setlist.include?(5))
+    return @setlist
   end
 
   def reset_list
-    @sets = []
+    @setlist = []
   end
 
   private
 
   def number_of_edge_cases
-    [@sets.count(3), @sets.count(5)].min
+    [@setlist.count(3), @setlist.count(5)].min
   end
 
   def optimise_discount
@@ -32,12 +32,12 @@ class DiscountableSetList
   end
 
   def remove_edge_case_set
-    @sets.delete_at(@sets.index(5))
-    @sets.delete_at(@sets.index(3))
+    @setlist.delete_at(@setlist.index(5))
+    @setlist.delete_at(@setlist.index(3))
   end
 
   def replace_edge_case_set
-    @sets.push(4, 4)
+    @setlist.push(4, 4)
   end
 
 end
