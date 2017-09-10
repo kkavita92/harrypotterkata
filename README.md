@@ -25,7 +25,9 @@ For example, how much does this basket of books cost?
 ## Reflection
 
 ## Pending
-* Refactor Calculator class by extracting further classes
 * Increase test coverage by adding more possibilities for baskets
-* Implement edge case - (5,3) book set vs (4,4) book set
+* Add tests for additional classes
+* Better naming for DiscountableSetList class and methods
+* Possible refactoring of MaximumDiscountFinder
+* Replace ```calculate_discount``` method with case statement
 * Complete README
