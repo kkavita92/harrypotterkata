@@ -7,21 +7,21 @@ class DiscountableSetList
   end
 
   def check_for_edge_case
-    optimise_discount if (@setlist.include?(3) && @setlist.include?(5))
+    remove_all_edge_cases if edge_case?
     return @setlist
   end
-
-  def reset_list
-    @setlist = []
-  end
-
+  
   private
+
+  def edge_case?
+    (@setlist.include?(3) && @setlist.include?(5))
+  end
 
   def number_of_edge_cases
     [@setlist.count(3), @setlist.count(5)].min
   end
 
-  def optimise_discount
+  def remove_all_edge_cases
     count = number_of_edge_cases
 
     while count > 0
