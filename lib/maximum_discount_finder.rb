@@ -20,7 +20,6 @@ class MaximumDiscountFinder
     end
 
      @discountable_set_list.check_for_edge_case
-     @discountable_set_list.sets
   end
 
   private
