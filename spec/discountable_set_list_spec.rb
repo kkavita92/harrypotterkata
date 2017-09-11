@@ -28,5 +28,4 @@ describe DiscountableSetList do
       expect(set_list.check_for_edge_case).to eq [5, 4, 4]
     end
   end
-
 end

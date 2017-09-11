@@ -86,7 +86,6 @@
         1,
         null,
         1,
-        null,
         1,
         null,
         1,
@@ -117,14 +116,12 @@
         1,
         62,
         null,
-        null,
         null
       ],
       "/Users/kavitakalaichelvan/harrypotterkata/lib/maximum_discount_finder.rb": [
         1,
         null,
         1,
-        null,
         1,
         null,
         1,
@@ -148,12 +145,10 @@
         115,
         null,
         null,
-        null,
         null
       ],
       "/Users/kavitakalaichelvan/harrypotterkata/lib/discountable_set_list.rb": [
         1,
-        null,
         1,
         null,
         1,
@@ -193,12 +188,10 @@
         1,
         13,
         null,
-        null,
         null
       ],
       "/Users/kavitakalaichelvan/harrypotterkata/lib/discount_calculator.rb": [
         1,
-        null,
         1,
         null,
         1,
@@ -215,7 +208,6 @@
         21,
         18,
         4,
-        null,
         null,
         null
       ],
@@ -313,6 +305,6 @@
         null
       ]
     },
-    "timestamp": 1505129177
+    "timestamp": 1505129581
   }
 }

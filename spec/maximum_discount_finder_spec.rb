@@ -29,5 +29,4 @@ describe MaximumDiscountFinder do
       expect(max_discount_finder.no_of_discountable_sets([1, 2, 3, 4, 5, 1, 2, 3, 1, 2, 3])).to eq [3, 4, 4]
     end
   end
-
 end

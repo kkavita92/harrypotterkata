@@ -1,5 +1,4 @@
 class DiscountCalculator
-
   BOOK_PRICE = 8
 
   def get_total_discount(indexed_basket)
@@ -17,5 +16,4 @@ class DiscountCalculator
     return 0.80 * 32 if no_of_books_in_set == 4
     return 0.75 * 40 if no_of_books_in_set == 5
   end
-
 end

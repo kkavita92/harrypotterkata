@@ -1,5 +1,4 @@
 class DiscountableSetList
-
   attr_reader :setlist
 
   def initialize
@@ -8,9 +7,9 @@ class DiscountableSetList
 
   def check_for_edge_case
     remove_all_edge_cases if edge_case?
-    return @setlist
+    @setlist
   end
-  
+
   private
 
   def edge_case?
@@ -39,5 +38,4 @@ class DiscountableSetList
   def replace_edge_case_set
     @setlist.push(4, 4)
   end
-
 end

@@ -26,7 +26,6 @@ describe Calculator do
   end
 
   describe 'discounted basket' do
-    # add all permutations for tests
     it 'calculates price for two different books' do
       expect(calculator.get_price([1, 2])).to eq 0.95 * 16
     end
@@ -45,34 +44,29 @@ describe Calculator do
   end
 
   describe 'complex basket' do
+    it 'calculates price for two different titles and one repeated title' do
+      expect(calculator.get_price([1, 2, 1])).to eq 0.95 * 16 + 8
+    end
 
-      it 'calculates price for two different titles and one repeated title' do
-        expect(calculator.get_price([1, 2, 1])).to eq 0.95 * 16 + 8
-      end
+    it 'calculates price for three different titles and one repeated title' do
+      expect(calculator.get_price([1, 2, 3, 1])).to eq 0.90 * 24 + 8
+    end
 
-      it 'calculates price for three different titles and one repeated title' do
-        expect(calculator.get_price([1, 2, 3, 1])).to eq 0.90 * 24 + 8
-      end
+    it 'calculates price for four different titles and one repeated title' do
+      expect(calculator.get_price([1, 2, 3, 4, 1])).to eq 0.80 * 32 + 8
+    end
 
-      it 'calculates price for four different titles and one repeated title' do
-        expect(calculator.get_price([1, 2, 3, 4, 1])).to eq 0.80 * 32 + 8
-      end
-
-      it 'calculates price for full set and one repeated title' do
-        expect(calculator.get_price([1, 2, 3, 4, 5, 1])).to eq 30 + 8
-      end
-
+    it 'calculates price for full set and one repeated title' do
+      expect(calculator.get_price([1, 2, 3, 4, 5, 1])).to eq 30 + 8
+    end
   end
 
   describe 'edge case' do
-
     it 'optimises discount' do
       expect(calculator.get_price([1, 2, 3, 4, 5, 1, 2, 3])).to eq 51.2
       expect(calculator.get_price([1, 2, 3, 4, 5, 1, 2, 3, 1])).to eq 59.2
-      #expect(calculator.get_price([1, 2, 3, 4, 5, 1, 2, 3, 1, 2, 3])).to eq 72.8
+      # expect(calculator.get_price([1, 2, 3, 4, 5, 1, 2, 3, 1, 2, 3])).to eq 72.8
       expect(calculator.get_price([1, 2, 3, 4, 5, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 3])).to eq 102.4
     end
-
   end
-
 end

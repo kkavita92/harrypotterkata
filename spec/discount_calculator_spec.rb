@@ -18,5 +18,4 @@ describe DiscountCalculator do
       expect(discount_calculator.get_total_discount([4, 4, 1])).to eq 59.2r
     end
   end
-
 end

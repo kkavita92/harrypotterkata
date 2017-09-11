@@ -2,7 +2,6 @@ require_relative 'maximum_discount_finder'
 require_relative 'discount_calculator'
 
 class Calculator
-
   BOOK_PRICE = 8
 
   def initialize(discount_finder = MaximumDiscountFinder, discount_calculator = DiscountCalculator)
@@ -31,7 +30,6 @@ class Calculator
   end
 
   def all_basket_same?(basket)
-    basket.all? {|book| book == basket[0]}
+    basket.all? { |book| book == basket[0] }
   end
-
 end
