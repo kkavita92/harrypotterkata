@@ -24,9 +24,17 @@ For example, how much does this basket of books cost?
 
 ## Reflection
 
+This was a lot more challenging than I anticipated! However, once I did manage to crack the discount optimisation algorithm, the path forward was definitely more straightforward.
+
+In previous instances, I've tended to overthink class extraction from the outset and end up trying to plan all the classes I need from the start. This usually makes things a lot more complicated because I am trying to refactor as I code rather than focusing on solving the problem at hand and then moving on to cleaning everything up.
+
+Thankfully, the optimisation problem was frustrating enough for me to avoid this pitfall. All of my initial solution was done in the poorly named ```Calculator``` class after which I began pulling out a lot of the logic into separate classes. I also replaced an array type with ```DiscountableSetList``` class after realising I was doing a lot of array manipulation on this one single array and it would be better of making it into a class with methods that would do the modifying and checking.
+
+In terms of struggles....tbc
+
 ## Pending
-* Increase test breadth by adding more possibilities for baskets
+* Increase test breadth by adding more possibilities for baskets -> all combination of books (is this necessary?)
 * Better naming for DiscountableSetList class and methods
-* Possible refactoring of MaximumDiscountFinder
+* Possible refactoring of MaximumDiscountFinder -> currently too clunky and possibly defying SRP
 * Correct 0.000001 bug affecting [4, 4, num] sets => [21.6, 25.6, 25.6].reduce(:+) returns 72.80000001 instead of 72.8
 * Complete README

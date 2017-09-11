@@ -5,7 +5,7 @@ class DiscountableSetList
     @setlist = []
   end
 
-  def check_for_edge_case
+  def complete_edge_case_check
     remove_all_edge_cases if edge_case?
     @setlist
   end

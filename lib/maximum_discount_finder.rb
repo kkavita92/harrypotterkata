@@ -14,7 +14,7 @@ class MaximumDiscountFinder
       end
     end
 
-    discountable_set_list.check_for_edge_case
+    discountable_set_list.complete_edge_case_check
   end
 
   private
