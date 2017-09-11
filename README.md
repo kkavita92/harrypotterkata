@@ -25,8 +25,8 @@ For example, how much does this basket of books cost?
 ## Reflection
 
 ## Pending
-* Increase test coverage by adding more possibilities for baskets
+* Increase test breadth by adding more possibilities for baskets
 * Better naming for DiscountableSetList class and methods
 * Possible refactoring of MaximumDiscountFinder
-* Replace ```calculate_discount``` method with case statement
+* Correct 0.000001 bug affecting [4, 4, num] sets
 * Complete README

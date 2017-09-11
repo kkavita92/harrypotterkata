@@ -1,7 +1,7 @@
 require_relative 'maximum_discount_finder'
 require_relative 'discount_calculator'
 
-class Calculator
+class PriceCalculator
   BOOK_PRICE = 8
 
   def initialize(discount_finder = MaximumDiscountFinder, discount_calculator = DiscountCalculator)
