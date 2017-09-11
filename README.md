@@ -26,7 +26,6 @@ For example, how much does this basket of books cost?
 
 ## Pending
 * Increase test coverage by adding more possibilities for baskets
-* Add tests for additional classes
 * Better naming for DiscountableSetList class and methods
 * Possible refactoring of MaximumDiscountFinder
 * Replace ```calculate_discount``` method with case statement
