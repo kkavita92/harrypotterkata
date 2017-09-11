@@ -15,7 +15,7 @@ describe DiscountCalculator do
     it 'calculates optimal discounted price for multiple book sets' do
       expect(discount_calculator.get_total_discount([2, 1])).to eq 23.2
       expect(discount_calculator.get_total_discount([5, 4, 2])).to eq 70.8
-      expect(discount_calculator.get_total_discount([4, 4, 1])).to eq 59.2r
+      expect(discount_calculator.get_total_discount([4, 4, 1])).to eq 59.2
     end
   end
 end

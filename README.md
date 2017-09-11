@@ -28,5 +28,5 @@ For example, how much does this basket of books cost?
 * Increase test breadth by adding more possibilities for baskets
 * Better naming for DiscountableSetList class and methods
 * Possible refactoring of MaximumDiscountFinder
-* Correct 0.000001 bug affecting [4, 4, num] sets
+* Correct 0.000001 bug affecting [4, 4, num] sets => [21.6, 25.6, 25.6].reduce(:+) returns 72.80000001 instead of 72.8
 * Complete README

@@ -8,7 +8,7 @@ class MaximumDiscountFinder
     sorted_basket = sort_basket_by_title(basket)
 
     while sorted_basket.max > 0
-      discountable_set_list.setlist << 5 - sorted_basket.count(0)
+      discountable_set_list.setlist << BOOKS_INDEX.count - sorted_basket.count(0)
       sorted_basket.map! do |book_count|
         book_count > 0 ? book_count - 1 : book_count
       end
