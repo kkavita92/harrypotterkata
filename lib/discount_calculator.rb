@@ -3,8 +3,7 @@ class DiscountCalculator
   DISCOUNTS = [0, 0.05, 0.10, 0.20, 0.25].dup
 
   def get_total_discount(indexed_basket)
-    indexed_basket
-    total = indexed_basket.map do |no_of_books_in_set|
+    indexed_basket.map do |no_of_books_in_set|
       calculate_discount(no_of_books_in_set)
       calculate_discount(no_of_books_in_set)
     end.reduce(:+)

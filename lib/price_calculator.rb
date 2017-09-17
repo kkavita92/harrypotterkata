@@ -16,13 +16,13 @@ class PriceCalculator
 
   private
 
-  def divide_basket_into_discountable_sets(basket)
-    @discount_finder.no_of_discountable_sets(basket)
-  end
-
   def discount_price(basket)
     indexed_basket = divide_basket_into_discountable_sets(basket)
     @discount_calculator.get_total_discount(indexed_basket)
+  end
+
+  def divide_basket_into_discountable_sets(basket)
+    @discount_finder.no_of_discountable_sets(basket)
   end
 
   def full_price(basket)
