@@ -32,6 +32,10 @@ From http://codingdojo.org/kata/potter/
 
 ## My Approach
 
+* Do simple basket case first - all same books
+* Do complex baskets - different combinations of books
+* Remove edge cases - baskets of 5,3 combinations
+* Refactoring / Class extraction from original ```Calculator``` class
 
 ## Reflection
 
